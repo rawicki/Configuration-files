@@ -38,6 +38,6 @@
     log1 = log --pretty=oneline
 [github]
 	user = rawicki
-	token = fd42b7ce55f2bddfad8f975b5cf4d56e
+	token = XXX
 [merge]
 	stat = true
