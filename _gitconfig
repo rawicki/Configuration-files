@@ -1,0 +1,43 @@
+[user]
+	name = Rafal Rawicki
+	email = rafal@rawicki.org
+[color]
+	ui = true
+	diff = auto
+	status = auto
+	branch = auto
+[branch]
+	autosetuprebase = always
+    remote = origin
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[core]
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    c-p = cherry-pick
+    lg = log -p
+    up = "!git update-index -q --refresh; if git diff-index --quiet --cached HEAD --ignore-submodules -- && git diff-files --quiet --ignore-submodules; then git pull --rebase; else git stash && { git pull --rebase ; git stash pop; }; fi"
+    pu = "! br=`git branch | grep '*' | tr -d '* '`; git push origin refs/heads/$br"
+    whitespace = "! find . -type f | xargs sed -E -i '' 's/([^[:space:]])[[:space:]]+$/\\1/g'"
+    log1 = log --pretty=oneline
+[github]
+	user = rawicki
+	token = fd42b7ce55f2bddfad8f975b5cf4d56e
+[merge]
+	stat = true
