@@ -1,0 +1,46 @@
+[user]
+	name = Rafal Rawicki
+	email = rafal.rawicki@flytronic.pl
+[color]
+	ui = true
+	diff = auto
+	status = auto
+	branch = auto
+[branch]
+	autosetuprebase = always
+    remote = origin
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[core]
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    c-p = cherry-pick
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    up = "!git update-index -q --refresh; if git diff-index --quiet --cached HEAD --ignore-submodules -- && git diff-files --quiet --ignore-submodules; then git pull --rebase; else git stash && { git pull --rebase ; git stash pop; }; fi"
+    pu = "! br=`git branch | grep '*' | tr -d '* '`; git push origin refs/heads/$br"
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    whitespace = "! find . -type f | xargs sed -E -i '' 's/([^[:space:]])[[:space:]]+$/\\1/g'"
+[github]
+	user = rawicki
+	token = XXX
+[merge]
+	stat = true
+[diff]
+	algorithm = histogram
