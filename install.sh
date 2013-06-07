@@ -18,6 +18,6 @@ install_configs $DEFAULT_APPS
 
 echo ""
 read -p "Install .xmonad? [y/N] "
-if [ "$REPLY" == "y" ] || ["$REPLY" == "Y"]; then
+if [ "$REPLY" == "y" ] ; then
 	install_configs $XMONAD_APPS
 fi
