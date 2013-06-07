@@ -11,7 +11,7 @@ function install_configs {
 echo "Setting basic configuration:"
 echo ""
 
-DEFAULT_APPS="vim vimrc gitconfig"
+DEFAULT_APPS="vim vimrc gitconfig screenrc"
 XMONAD_APPS="xmonad xmobarrc"
 
 install_configs $DEFAULT_APPS
