@@ -31,13 +31,16 @@
     co = checkout
     df = diff
     c-p = cherry-pick
-    lg = log -p
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     up = "!git update-index -q --refresh; if git diff-index --quiet --cached HEAD --ignore-submodules -- && git diff-files --quiet --ignore-submodules; then git pull --rebase; else git stash && { git pull --rebase ; git stash pop; }; fi"
     pu = "! br=`git branch | grep '*' | tr -d '* '`; git push origin refs/heads/$br"
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
     whitespace = "! find . -type f | xargs sed -E -i '' 's/([^[:space:]])[[:space:]]+$/\\1/g'"
-    log1 = log --pretty=oneline
 [github]
 	user = rawicki
 	token = XXX
 [merge]
 	stat = true
+[diff]
+	algorithm = histogram

@@ -15,7 +15,7 @@ nmap ^[[6;5~ <C-PageDown>
 
 syntax on
 set bg=dark
-"set t_Co=256
+set t_Co=256
 colorscheme molokai
 set nu
 
@@ -30,10 +30,10 @@ set autoindent
 set cindent
 
 set tabstop=4
-set softtabstop=4
+"set softtabstop=4
 set shiftwidth=4
 
-set expandtab
+"set expandtab
 
 " Smart scrolling (10 lines before viewport ends)
 
@@ -83,6 +83,9 @@ set tenc=utf-8
 
 au Filetype tex let g:tex_fold_enabled=1
 au Filetype tex set fdm=syntax
+au BufNewFile,BufRead *.nc set filetype=cpp
+
+au Syntax def runtime!  syntax/cpp.vim
 
 set shortmess=atI
 
@@ -95,9 +98,7 @@ filetype plugin indent on
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 
-" SIO2 settings
+set laststatus=2
 
-set tags=~/tag/repo/util/vim-tags/sio2_vim_tags.txt " These are the sio2 tags
-set wildmode=longest,list,full " This gives you a bash like completion
-set wildmenu " This shows your completion proposals
+call pathogen#infect()
 
